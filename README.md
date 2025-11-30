@@ -30,4 +30,7 @@ ANS: A Headless Service in Kubernetes is a type of Service that does not provide
 spec:
   clusterIP: None
 Headless services are used for apps that need to handle load balancing themselves — e.g., Stateful apps like databases.
+10. Difference between security groups and NACL
+11. I have an image and container is running with that image.Can you able to delete that image? and what happens if you delete that image?                                                                 
+12. How can we maintain the different version a file in git?                                                                                                 
 
