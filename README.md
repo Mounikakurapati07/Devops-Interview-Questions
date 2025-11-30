@@ -1,9 +1,10 @@
 # Devops-Interview-Questions
 1.I have a private subnet and i am not attaching NAT gateway, can we call a subnet without NAT gateway as private subnet?                                                                   
-ANS: yes, we can call a subnet without NAT gateway as private subnet because even if we assign NAT gateway or not that is a private subnet only.if we assign NAT gateway then it means we are enabling the outbound rule to the private subnet, if does not assign that subnet will be completely isolated.
+ANS: yes, we can call a subnet without NAT gateway as private subnet because even if we assign NAT gateway or not that is a private subnet only.if we assign NAT gateway then it means we are enabling the outbound      rule to the private subnet, if does not assign that subnet will be completely isolated.
 
 2. Explain the s3 lifecycle.
 ANS: 
+
 3. Explain the types of rules of autoscalling groups.                                                                                                                 
 
 4. I have two or more VPC's in different AWS accounts, how can you establish the communication between the VPC's?
@@ -24,13 +25,18 @@ ANS: You can automate this easily in AWS using EventBridge + Lambda (or Systems 
      RDS Instances
      DocumentDB
     Any custom DB server                                                                                                                                                     
+
 8. Difference between ingress and Load balancer?                                                                                                                                              
+
 9. what is headless service?                                                                                                                                        
 ANS: A Headless Service in Kubernetes is a type of Service that does not provide a ClusterIP. Instead of load-balancing traffic, it allows clients to directly discover and connect to individual Pods.
-spec:
-  clusterIP: None
-Headless services are used for apps that need to handle load balancing themselves — e.g., Stateful apps like databases.
+    spec:
+       clusterIP: None
+    Headless services are used for apps that need to handle load balancing themselves — e.g., Stateful apps like databases.                                        
+
 10. Difference between security groups and NACL
+
 11. I have an image and container is running with that image.Can you able to delete that image? and what happens if you delete that image?                                                                 
+
 12. How can we maintain the different version a file in git?                                                                                                 
 
