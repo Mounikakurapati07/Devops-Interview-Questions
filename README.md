@@ -14,3 +14,10 @@ ANS:
 6. In s3 I have few private objects and I want to give access to a user for just 10 minutes. how will you do that without using creting roles?
 
 7. In cloud i need few database servers to be create everyday at a prticular time(9AM) and deleted in the evening(6PM) to reduce the billing how can you do that?
+8. Difference between ingress and Load balancer?
+9. what is headless service?
+ANS: A Headless Service in Kubernetes is a type of Service that does not provide a ClusterIP. Instead of load-balancing traffic, it allows clients to directly discover and connect to individual Pods.
+spec:
+  clusterIP: None
+Headless services are used for apps that need to handle load balancing themselves — e.g., Stateful apps like databases.
+
