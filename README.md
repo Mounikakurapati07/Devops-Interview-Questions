@@ -12,7 +12,8 @@ Expiration actions – These actions define when objects expire. Amazon S3 delet
 
 6. My server is in Private subnet and its has no NAT gateway attached to it and should not attach any NAT gate way. how can you access the objects inside the S3 buckets?
 
-7. In s3 I have few private objects and I want to give access to a user for just 10 minutes. how will you do that without using creting roles?                                                                     ANS: You can do this easily using an S3 Pre-Signed URL.This allows temporary access (like 10 minutes) to a private S3 object without creating roles, users, or policies.
+7. In s3 I have few private objects and I want to give access to a user for just 10 minutes. how will you do that without using creting roles?
+   ANS: You can do this easily using an S3 Pre-Signed URL.This allows temporary access (like 10 minutes) to a private S3 object without creating roles, users, or policies.
      we can do this in multiple ways like using AWS CLI, or by writing Python script, or by writing terraform script and also we can create manually.
      aws s3 presign s3://mybucket/myobject.txt --expires-in 600 (AWS CLI way of creating URL)  we can give this URL so that they can access the s3 objects till that time expires.
 
@@ -37,7 +38,7 @@ ANS: A Headless Service in Kubernetes is a type of Service that does not provide
 
 11. Difference between security groups and NACL
 
-12. I have an image and container is running with that image.Can you able to delete that image? and what happens if you delete that image?                                                                 
+13. I have an image and container is running with that image.Can you able to delete that image? and what happens if you delete that image?                                                                 
 
-13. How can we maintain the different version a file in git?                                                                                                 
+14. How can we maintain the different version a file in git?                                                                                                 
 
