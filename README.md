@@ -42,3 +42,4 @@ ANS: A Headless Service in Kubernetes is a type of Service that does not provide
 
 14. How can we maintain the different version a file in git?                                                                                                 
 
+https://medium.com/@chandrashekhar.cr/top-10-aws-scenario-based-interview-questions-and-answers-2025-5ddcd5404bb7
