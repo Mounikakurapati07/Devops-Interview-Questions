@@ -34,9 +34,22 @@ ANS: You can automate this easily in AWS using EventBridge + Lambda (or Systems 
 ANS: A Headless Service in Kubernetes is a type of Service that does not provide a ClusterIP. Instead of load-balancing traffic, it allows clients to directly discover and connect to individual Pods.
     spec:
        clusterIP: None
-    Headless services are used for apps that need to handle load balancing themselves — e.g., Stateful apps like databases.                                        
+    Headless services are used for apps that need to handle load balancing themselves — e.g., Stateful apps like databases.
 
-11. Difference between security groups and NACL
+11. Can you attach a single EBS volume to multiple EC2 instances at the same time?
+
+ANS:    No, you cannot attach a single Amazon EBS (Elastic Block Store) volume to multiple EC2 instances at the same time in the traditional way. An EBS volume is designed to be attached to only one EC2 instance at a time, and it behaves like a block device. If you try to attach it to multiple instances simultaneously, you risk data corruption because block storage doesn’t handle concurrent writes safely across multiple servers.
+
+Alternatives
+Amazon EFS (Elastic File System): If you need shared storage accessible by multiple EC2 instances at the same time, EFS is the right choice. It provides a scalable, managed NFS file system that multiple instances can mount concurrently.
+
+Amazon FSx: For workloads requiring Windows File Server or Lustre, FSx provides shared file storage.
+
+Clustered File Systems on EBS: In advanced setups, you can technically attach an EBS volume to multiple instances in read-only mode, or use specialized clustered file systems (like GFS2 or OCFS2) with careful configuration. But this is complex and not the default or recommended approach.
+
+So, the short answer: No, not directly. Use EFS or FSx if you need shared storage across multiple EC2 instances.
+
+12. Difference between security groups and NACL
 
 13. I have an image and container is running with that image.Can you able to delete that image? and what happens if you delete that image?                                                                 
 
@@ -44,3 +57,40 @@ ANS: A Headless Service in Kubernetes is a type of Service that does not provide
 
 https://medium.com/@chandrashekhar.cr/top-10-aws-scenario-based-interview-questions-and-answers-2025-5ddcd5404bb7
 https://www.linkedin.com/posts/ops-mohammed-irfan-shaikh_kubernetes-cloudnative-devops-activity-7414266741918441473-Kxxz?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAADhRbxoBAheuPuDQcKkXqDpp84EuggQouWw&utm_campaign=whatsapp
+
+15. Can we able to attach the AMI directly as base image in docker file?
+
+16. i have three apllications like amazon, flipcard, mintra each application need 40GB volume but you have only 100 GB volume how can you assign the volume to all the three applications.
+
+17. i have one application which is hosted in my ec2 instace which is present in a private subnet and from google i am requestig to access it, can you walk us which AWS services will include in the process of reaching my application request from browser to application.
+
+18. How to access the S3 bucket privately?
+ANS: To access an Amazon S3 bucket privately, you need to ensure that traffic between your applications and S3 stays within the AWS network, without going through the public internet. Here are the main approaches:
+
+1. Use VPC Gateway Endpoints
+Create a VPC endpoint for S3 in your Virtual Private Cloud (VPC).
+This allows EC2 instances in private subnets to access S3 directly, without requiring an internet gateway or NAT device.
+Traffic remains inside the AWS backbone network, improving security and reducing costs.
+2. Restrict Bucket Access with IAM Policies
+Configure bucket policies to allow access only from specific VPC endpoints or IAM roles.
+This ensures that only authorized users or applications can interact with the bucket.
+3. Private Access via Presigned URLs
+Generate presigned URLs that grant temporary, controlled access to specific objects in the bucket.
+Combine this with VPC endpoints to ensure the access happens only within your private network.
+4. Block Public Access
+Enable Block Public Access settings on the bucket to prevent accidental exposure.
+This ensures no object or bucket can be made publicly accessible.
+5. Encryption and Access Control
+Use S3 server-side encryption (SSE) or KMS-managed keys for data protection.
+Apply fine-grained IAM permissions to control who can read/write objects.
+
+19. How many VPC's we can create in a region?
+ANS: By default, you can create up to 5 VPCs per AWS Region in your account. However, this quota is adjustable — you can request an increase through the AWS Service Quotas console or by contacting AWS Support. With an approved quota increase, it’s possible to have hundreds of VPCs per Region if your architecture requires it. 
+
+Quick Summary
+Default limit: 5 VPCs per Region.
+
+Adjustable: Yes, via Service Quotas or AWS Support.
+
+Scalability: Can be increased to hundreds per Region if needed.
+    
