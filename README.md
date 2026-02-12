@@ -85,12 +85,22 @@ Use S3 server-side encryption (SSE) or KMS-managed keys for data protection.
 Apply fine-grained IAM permissions to control who can read/write objects.
 
 19. How many VPC's we can create in a region?
-ANS: By default, you can create up to 5 VPCs per AWS Region in your account. However, this quota is adjustable — you can request an increase through the AWS Service Quotas console or by contacting AWS Support. With an approved quota increase, it’s possible to have hundreds of VPCs per Region if your architecture requires it. 
-
+ANS: By default, you can create up to 5 VPCs per AWS Region in your account. However, this quota is adjustable — you can request an increase through the AWS Service Quotas console or by contacting AWS Support.
+With an approved quota increase, it’s possible to have hundreds of VPCs per Region if your architecture requires it.
+Scalability: Can be increased to hundreds per Region if needed.
 Quick Summary
 Default limit: 5 VPCs per Region.
-
 Adjustable: Yes, via Service Quotas or AWS Support.
 
-Scalability: Can be increased to hundreds per Region if needed.
+21. Production EKS app went down at 2 AM. What is your immediate action plan?
+ANS: “First, I acknowledge the alert and assess blast radius using monitoring dashboards. I check Kubernetes pod, node and event status to identify if it’s application, cluster or infra related. I quickly review recent deployments and logs.
+If the outage is caused by a bad deployment, I immediately roll back. If pods are crashing due to resource or node issues, I scale replicas or replace unhealthy nodes.
+While fixing, I keep stakeholders informed every 10–15 minutes.
+After restoration, I validate service health, monitor stability and later perform RCA with preventive measures like better alerts, probes and autoscaling.”
+
+13.Pods are in CrashLoopBackOff after deployment. How will you troubleshoot?
+ANS:“First I confirm if only the new deployment pods are crashing. I describe the pod and check previous container logs to identify the failure reason. I compare the new deployment with the last working revision to see what changed — image, config, secrets or resource limits.
+To restore production fast, I immediately roll back the deployment. After service is stable, I fix the root cause and add preventive measures like canary deployments, better probes and CI validation.”
+
+
     
