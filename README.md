@@ -67,20 +67,20 @@ https://www.linkedin.com/posts/ops-mohammed-irfan-shaikh_kubernetes-cloudnative-
 18. How to access the S3 bucket privately?
 ANS: To access an Amazon S3 bucket privately, you need to ensure that traffic between your applications and S3 stays within the AWS network, without going through the public internet. Here are the main approaches:
 
-1. Use VPC Gateway Endpoints
+a. Use VPC Gateway Endpoints
 Create a VPC endpoint for S3 in your Virtual Private Cloud (VPC).
 This allows EC2 instances in private subnets to access S3 directly, without requiring an internet gateway or NAT device.
 Traffic remains inside the AWS backbone network, improving security and reducing costs.
-2. Restrict Bucket Access with IAM Policies
+b.. Restrict Bucket Access with IAM Policies
 Configure bucket policies to allow access only from specific VPC endpoints or IAM roles.
 This ensures that only authorized users or applications can interact with the bucket.
-3. Private Access via Presigned URLs
+c. Private Access via Presigned URLs
 Generate presigned URLs that grant temporary, controlled access to specific objects in the bucket.
 Combine this with VPC endpoints to ensure the access happens only within your private network.
-4. Block Public Access
+d. Block Public Access
 Enable Block Public Access settings on the bucket to prevent accidental exposure.
 This ensures no object or bucket can be made publicly accessible.
-5. Encryption and Access Control
+e. Encryption and Access Control
 Use S3 server-side encryption (SSE) or KMS-managed keys for data protection.
 Apply fine-grained IAM permissions to control who can read/write objects.
 
@@ -92,13 +92,13 @@ Quick Summary
 Default limit: 5 VPCs per Region.
 Adjustable: Yes, via Service Quotas or AWS Support.
 
-21. Production EKS app went down at 2 AM. What is your immediate action plan?
+20. Production EKS app went down at 2 AM. What is your immediate action plan?
 ANS: “First, I acknowledge the alert and assess blast radius using monitoring dashboards. I check Kubernetes pod, node and event status to identify if it’s application, cluster or infra related. I quickly review recent deployments and logs.
 If the outage is caused by a bad deployment, I immediately roll back. If pods are crashing due to resource or node issues, I scale replicas or replace unhealthy nodes.
 While fixing, I keep stakeholders informed every 10–15 minutes.
 After restoration, I validate service health, monitor stability and later perform RCA with preventive measures like better alerts, probes and autoscaling.”
 
-13.Pods are in CrashLoopBackOff after deployment. How will you troubleshoot?
+21.Pods are in CrashLoopBackOff after deployment. How will you troubleshoot?
 ANS:“First I confirm if only the new deployment pods are crashing. I describe the pod and check previous container logs to identify the failure reason. I compare the new deployment with the last working revision to see what changed — image, config, secrets or resource limits.
 To restore production fast, I immediately roll back the deployment. After service is stable, I fix the root cause and add preventive measures like canary deployments, better probes and CI validation.”
 
