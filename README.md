@@ -102,5 +102,20 @@ After restoration, I validate service health, monitor stability and later perfor
 ANS:“First I confirm if only the new deployment pods are crashing. I describe the pod and check previous container logs to identify the failure reason. I compare the new deployment with the last working revision to see what changed — image, config, secrets or resource limits.
 To restore production fast, I immediately roll back the deployment. After service is stable, I fix the root cause and add preventive measures like canary deployments, better probes and CI validation.”
 
+RETHINK PASSION INTERVIEW QUESTIONS
+-----------------------------------
+
+1. linux command to copy files from one server to another
+2. command to check drive details
+3. command to check ports --->
+4. linux command to create a soft link to a file
+5. how will you download a folder from s3 buckets
+6. how will you recover the currepted EBS volume of an instance 
+7. I have one ec2 instance and how will you create the EC2 instance with same configrations like existing ec2 instance
+8. difference between copy and ADD in docker file
+9. explain why do you use docker compose
+10. explain about the concept of CloudFront 
+11. what do you know about the RDS and whave you ever worked on it?
+
 
     
