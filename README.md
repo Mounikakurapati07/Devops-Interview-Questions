@@ -126,4 +126,21 @@ RETHINK PASSION INTERVIEW QUESTIONS
 11. what do you know about the RDS and whave you ever worked on it?
 
 
+Qvantel Interview questions
+-----------------------------
+1. explain clearly how you will you access the files in s3 from a server in Private subnet.
+2. difference between ALB and NLB
+3. demonstrate the CI/CD pipeline how you will zip the files from a github and upload them in S3
+4. what are the types of IAM policies
+5. did you ever work on creating the transition gateway and side to side gateway
+6. how will you create a application load balancer in Terraform
+7. explain me in terraform perspective how you wil create the VPC
+8. difference between the systems manager and secrets manager
+9. how you will store and access the credentials from AWs secrets manager
+10. what are the types of storages that you worked on (ex: block storage, filestorage)
+11. explain how you will attach the block storage to a ec2 instance
+12. what are primary and sencondary storages paths(/XUV
+13. 
+
+
     
