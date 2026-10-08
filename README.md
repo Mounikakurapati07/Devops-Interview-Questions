@@ -142,5 +142,9 @@ Qvantel Interview questions
 12. what are primary and sencondary storages paths(/XUV
 13. 
 
-
+points to Note
+------------------------
+1. if a CiDR range is defined we can't modify it. if we want more ip's we need to create one more VPC and and we need to pair those two VPC's(we can't change the subnet ranges also)
+2. access keys that we get while lanching instances are region specific.
+3. 
     
